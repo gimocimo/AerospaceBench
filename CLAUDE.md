@@ -61,7 +61,7 @@ Read this first in every session. It holds the brief, the working rules, the dec
 - **Phase 0 — landscape research:** done (2026-10-06).
 - **Phase 1 — design:** framework v0.3 drafted (`docs/benchmark_design.md`), combining Guglielmo's framework with Claude's [proposal] refinements. Waiting for Guglielmo's answers to its §11 questions: private task workspace, git workflow, pilot shape and scope, episode length, feasibility mix, human reference, cross-vendor red team, Q15 timing, next step.
 - **Next:** 2–3 candidate pathfinder family briefs (G1 format) for Guglielmo to select from; then contacts research; then a very simple consultation plan.
-- **Repo:** initialised locally on `main`. The first push on 2026-10-07 failed with repeated GitHub "Internal Server Error" responses; check `git status` and retry.
+- **Repo:** `main` pushed to GitHub on 2026-10-07, after transient GitHub "Internal Server Error" responses on the first attempts (they resolved within minutes).
 
 ## Key findings from Phase 0 (details in the report)
 
