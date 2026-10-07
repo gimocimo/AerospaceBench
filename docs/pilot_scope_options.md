@@ -1,5 +1,7 @@
 # Pilot scope, design options and task families (draft v0.2)
 
+> **Status (2026-10-07).** Guglielmo chose pilot option **C** (§2), full-benchmark option **F3** and the expansion order (§3); see D19–D21 in `CLAUDE.md`. His project-style task framework (D23) and co-creation of tasks with Claude (D22) supersede §4 (design options), §5–§6 (the short-task family menu and shortlist) and §7 (effort). The current design is in [`benchmark_design.md`](benchmark_design.md). The family menu remains useful as a parts bin: many families could become sub-problems or ladder rungs inside project-style environments.
+
 *Drafted by Claude, 2026-10-06, after Guglielmo's answers to Q1–Q13 (decisions D6–D18 in `CLAUDE.md`). This is a menu of options and a recommendation for Guglielmo to choose from; nothing here is agreed until it appears in the decision log. Everything Claude proposes here is at the level of **task families** (kinds of engineering work). Guglielmo authors the concrete tasks: scenario, inputs, reference solution and rubric.*
 
 > **Suggestion before reading §5.** If you want some tasks to be provably yours rather than prompted by this menu, spend 15–20 minutes listing task ideas from your own experience first. They get the provenance tag "G" (see §4.6), which makes the circularity analysis in the paper stronger.

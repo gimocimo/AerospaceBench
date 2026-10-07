@@ -23,12 +23,14 @@
 | Q10 | Budget | Minimise cost: ideally only LLM usage, preferably through existing Claude and ChatGPT subscriptions rather than API or third parties; frontier models only (Claude Opus/Fable; ChatGPT "Astra/Sol"). How models are run belongs to Q15 | D15 |
 | Q11 | Time and roles | No target dates; 10–15 h/week; sole author | D16 |
 | Q12 | Later roles | Depends on contacts; to revisit after the contacts research | open |
-| Q13 | Paywalled literature | Guglielmo will download papers from links Claude provides: Connolly, AIAA 2025-0702 (https://arc.aiaa.org/doi/10.2514/6.2025-0702); MITRE/FAA ALUE, AIAA 2025-3247 (https://arc.aiaa.org/doi/10.2514/6.2025-3247) | in progress |
+| Q13 | Paywalled literature | Both papers provided and read on 2026-10-07: no overlap (notes in `related_work_notes.md`) | D25 |
+
+*Newer design questions (private task workspace, git workflow, pilot shape, episode length, feasibility mix, human reference, cross-vendor red team) are in `benchmark_design.md` §11.*
 
 ## C. Needed before implementation — deferred (ask again later; do not assume)
 
 | ID | Question | Status |
 |----|----------|--------|
-| Q14 | Environment and task modes (one sandbox with Python and open tools for every task? include Check tasks?) | Deferred (D17) |
-| Q15 | Models and harness (which models; API vs subscriptions; common harness) | Deferred (D17); preference stated in D15 |
+| Q14 | Environment and task modes (one sandbox with Python and open tools for every task? include Check tasks?) | Deferred (D17). Largely shaped by D23: project environments with sandboxed open tools |
+| Q15 | Models and harness (which models; API vs subscriptions; common harness) | Deferred (D17); preference stated in D15. Now relevant: D23's budget surfaces, inference accounting and checkpointed submissions depend on it |
 | Q16 | Release, licence and headline metric | Deferred (D17) |
