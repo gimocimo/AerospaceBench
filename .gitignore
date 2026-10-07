@@ -1,0 +1,16 @@
+# Third-party papers (copyrighted): keep local, cite by link instead
+*.pdf
+
+# OS and editor files
+.DS_Store
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Local-only material that must never be published (e.g. private task drafts)
+private/
