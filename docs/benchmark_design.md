@@ -154,7 +154,7 @@ Each stage's work package is scored with the acceptance and quality rules above.
 
 **Measuring circularity [proposal]:** record the generator of each family (Claude, GPT, Guglielmo, expert). Report results by generator × solver. If cheap, seed some families with GPT as generator, so a Claude-generator advantage or disadvantage becomes measurable rather than assumed.
 
-**Where task content lives [proposal]:** the GitHub repository is public. Candidate and final task content (instances, reference solutions, withheld conditions, verifier test data) must never be pushed there; anything public may enter future training data. See §11.
+**Where task content lives (D26):** the GitHub repository is public. Candidate and final task content (instances, reference solutions, withheld conditions, verifier test data) lives only in the private repository `gimocimo/AerospaceBench-tasks`, where every file carries a canary GUID (recorded only in that repository).
 
 ## 7. Difficulty calibration and human reference
 
@@ -189,7 +189,7 @@ Each stage's work package is scored with the acceptance and quality rules above.
 - Costed investigations.
 - No large paid human-baseline set, at least initially.
 
-## 9. Implications for the pilot (option C, reinterpreted) [proposal]
+## 9. Implications for the pilot (option C, reinterpreted; confirmed by D28–D29)
 
 - **Size.** Option C (D19) was sized for ~24 short tasks; a project-style family is one to two orders of magnitude more work. Proposed reinterpretation:
   - ~5–6 families across structures, aerodynamics/performance/design and propulsion;
@@ -212,15 +212,19 @@ Each stage's work package is scored with the acceptance and quality rules above.
 | Contamination through the public repo | Private location for task content (§11) |
 | Harness confound (vendor agents differ) | Decide in Q15; disclose; report per model–harness pair |
 
-## 11. Open questions for Guglielmo
+## 11. Questions and answers
 
-1. **Private task workspace.** The repo is public. Should task content go in a separate private repository (recommended), or should this repository become private until release?
-2. **Git workflow.** Commit design docs directly to `main`, or use branches and pull requests?
-3. **Pilot shape.** Confirm the reinterpretation of option C (§9): ~5–6 families with ladders, pathfinder first.
-4. **Pilot scope.** Stay with the three pillars (plus sector variety and integration), with systems engineering as a cross-cutting dimension? Or pull guidance and control, or spacecraft mission design, into the pilot?
-5. **Episode length.** Target agent wall-clock caps (e.g. 1 h, 4 h, 8 h), and the target competent-engineer time per rung (e.g. rung 0 ≈ 1–2 h, top rung ≈ 1–2 days).
-6. **Feasibility mix.** For example ~70% feasible, ~15% infeasible, ~15% underdetermined, undisclosed per instance.
-7. **Human reference.** None (model-calibrated plus expert time estimates), or occasional volunteer attempts later?
-8. **Cross-vendor red team.** May ChatGPT review Claude-generated packages, and generate some families, so generator × solver effects can be measured?
-9. **Q14–Q16 are now relevant.** Budget surfaces, inference accounting, checkpointed submissions and parallelism all depend on how models are run. Take Q15 (models and harness) next?
-10. **Next step.** Should Claude come back with 2–3 candidate pathfinder family briefs (G1 format) for selection?
+Answered by Guglielmo on 2026-10-07 (decisions D26–D35 in `CLAUDE.md`):
+
+| # | Question | Answer |
+|---|---|---|
+| 1 | Private task workspace | A separate private repo: `gimocimo/AerospaceBench-tasks`, cloned locally at `private/` (git-ignored) |
+| 2 | Git workflow | Commit straight to `main`; no branches or pull requests |
+| 3 | Pilot shape | Confirmed: ~5–6 families with ladders, pathfinder first |
+| 4 | Pilot scope | The three pillars only |
+| 5 | Episode length | To be decided during task design (briefs carry proposed caps) |
+| 6 | Feasibility mix | ~70% feasible / ~15% infeasible / ~15% underdetermined, undisclosed per instance |
+| 7 | Human reference | None for now; revisit if the pilot succeeds |
+| 8 | Cross-vendor red team | Approved: ChatGPT may red-team Claude-generated packages. GPT-generated families were not explicitly approved; ask before using them |
+| 9 | Q15 (models and harness) | Under discussion: see [`models_and_harness.md`](models_and_harness.md) |
+| 10 | Pathfinder briefs | Delivered (private repo, `candidates/pathfinder_briefs.md`) |

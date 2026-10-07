@@ -19,8 +19,9 @@ Read this first in every session. It holds the brief, the working rules, the dec
 ## Working rules
 
 - No implementation (harness, environments, verifiers, model runs) until the design and validation approach are agreed with Guglielmo.
-- Keep the brief, decisions and outputs in this file and `docs/` as we go; update the decision log whenever Guglielmo decides something. Commit and push updates to the GitHub repo (D24).
-- **Never push task content to the public repo:** instances, reference solutions, withheld conditions, verifier test data, or candidate task packages. Anything public may enter future training data. Keep such material in `private/` (git-ignored) until a private location is agreed (open question in `docs/benchmark_design.md` §11).
+- Keep the brief, decisions and outputs in this file and `docs/` as we go; update the decision log whenever Guglielmo decides something. Commit and push updates to GitHub, straight to `main` in both repos, with no branches or pull requests (D24, D27).
+- **Never push task content to the public repo:** instances, reference solutions, withheld conditions, verifier test data, candidate family briefs or fault catalogues. Anything public may enter future training data. Task content lives only in the private repo `gimocimo/AerospaceBench-tasks`, cloned at `private/` (git-ignored here) (D26). Every private file carries the canary GUID recorded in `private/README.md`. Never copy that GUID into the public repo.
+- Public docs may name families at a high level, but must not reveal hidden parameters, faults, references or withheld conditions.
 - Never commit third-party PDFs (copyright); cite by link. `*.pdf` is git-ignored.
 - Claude-generated candidate tasks enter the benchmark only after Guglielmo's selection and the generation protocol in `docs/benchmark_design.md` §6: coherence and solvability checks, a verifier test suite, fresh-instance trials, and provenance recorded.
 - Sequence (D18): agree the pilot scope and task families first, then research contacts, then a very simple consultation plan.
@@ -55,12 +56,24 @@ Read this first in every session. It holds the brief, the working rules, the dec
 | D23 | 2026-10-07 | Design direction: multi-hour end-to-end engineering projects. Work package = requirements, editable project files, documentation, data, open tools, submission interface; delivery = executable artifacts, results, assumptions, requirement-to-evidence map. Independent simulators and withheld operating conditions; acceptance first (hard requirements pass/fail), quality among accepted; primary result P(verified completion given family, difficulty and budget); claim integrity and confidence calibration; multi-dimensional difficulty ladders; empirical difficulty calibration; RE-Bench as structural precedent. Details and Claude's refinements in `docs/benchmark_design.md` | Guglielmo |
 | D24 | 2026-10-07 | GitHub repo github.com/gimocimo/AerospaceBench (public) is the system of record; push updates there | Guglielmo |
 | D25 | 2026-10-07 | Connolly-2025 and Mangortey-2025 assessed (no overlap; notes in `docs/related_work_notes.md`) and moved to the macOS Trash. ReBench-2024.pdf kept locally, not committed | Guglielmo |
+| D26 | 2026-10-07 | Task content lives in a second, private repo: `gimocimo/AerospaceBench-tasks` (created by Claude with `gh`), cloned at `private/` | Guglielmo |
+| D27 | 2026-10-07 | Commit straight to `main`; no branches or pull requests | Guglielmo |
+| D28 | 2026-10-07 | Pilot option C confirmed as ~5–6 families with difficulty ladders; pathfinder family first | Guglielmo |
+| D29 | 2026-10-07 | Pilot stays within the three pillars (structures; aero, performance and design; propulsion) | Guglielmo |
+| D30 | 2026-10-07 | Episode length and wall-clock caps to be decided during task design | Guglielmo |
+| D31 | 2026-10-07 | Feasibility mix ~70% feasible / ~15% infeasible / ~15% underdetermined, undisclosed per instance | Guglielmo |
+| D32 | 2026-10-07 | No human reference for now; look for one if the pilot succeeds | Guglielmo |
+| D33 | 2026-10-07 | ChatGPT may red-team Claude-generated task packages. GPT-generated families not yet approved; ask first | Guglielmo |
+| D34 | 2026-10-07 | Q15 (models and harness) opened for discussion; options in `docs/models_and_harness.md` | Guglielmo |
+| D35 | 2026-10-07 | Claude to provide 2–3 candidate pathfinder briefs (delivered in `private/candidates/pathfinder_briefs.md`) | Guglielmo |
 
 ## Status
 
 - **Phase 0 — landscape research:** done (2026-10-06).
-- **Phase 1 — design:** framework v0.3 drafted (`docs/benchmark_design.md`), combining Guglielmo's framework with Claude's [proposal] refinements. Waiting for Guglielmo's answers to its §11 questions: private task workspace, git workflow, pilot shape and scope, episode length, feasibility mix, human reference, cross-vendor red team, Q15 timing, next step.
-- **Next:** 2–3 candidate pathfinder family briefs (G1 format) for Guglielmo to select from; then contacts research; then a very simple consultation plan.
+- **Phase 1 — design:** framework v0.3 (`docs/benchmark_design.md`); its §11 questions were answered on 2026-10-07 (D26–D35).
+- **Now:** Guglielmo is choosing the pathfinder from three private candidate briefs: P-A (structures, diagnostic; Claude recommends it), P-B (aero-structural design), P-C (propulsion operations). He is also answering the Q15 questions in `docs/models_and_harness.md`, where Claude recommends running each vendor's own agent on subscriptions, with measurement inside the environment.
+- **Next:** detailed specification of the chosen pathfinder (private repo); contacts research for its expert review; then a very simple consultation plan. Implementation only after the design and validation approach are agreed (D2).
+- **Environment facts:** host is an Apple M2 Pro (10 cores, 16 GB RAM). Docker 29 is installed (daemon not running on 2026-10-07). Claude Code CLI 2.1.143 is installed; Codex CLI is not. Solver images must support ARM.
 - **Repo:** `main` pushed to GitHub on 2026-10-07, after transient GitHub "Internal Server Error" responses on the first attempts (they resolved within minutes).
 
 ## Key findings from Phase 0 (details in the report)
@@ -80,6 +93,8 @@ Read this first in every session. It holds the brief, the working rules, the dec
 - `README.md` — public project description.
 - `docs/benchmark_design.md` — **current** design framework (v0.3): central question, unit of evaluation, difficulty ladder, acceptance-first evaluation, verifiers, co-creation protocol, RE-Bench comparison, pilot implications, risks, open questions.
 - `docs/related_work_notes.md` — notes on Connolly 2025, ALUE 2025 and RE-Bench.
+- `docs/models_and_harness.md` — Q15 options for running models (vendor agents on subscriptions vs a common harness via APIs), with checked facts and a recommendation.
+- `private/` — clone of the private repo `gimocimo/AerospaceBench-tasks` (git-ignored here): candidate briefs, and later family specifications, instances and references.
 - `docs/pilot_scope_options.md` — v0.2. Options C and F3 chosen; its short-task design and family menu are superseded but kept as a parts bin.
 - `docs/pilot_proposal.md` — v0.1; partly superseded.
 - `docs/open_questions.md` — Q1–Q16 with Guglielmo's answers; newer questions live in `benchmark_design.md` §11.
