@@ -73,13 +73,24 @@ Read this first in every session. It holds the brief, the working rules, the dec
 | D40 | 2026-10-12 | Episodes run on this Mac in Docker containers | Guglielmo |
 | D41 | 2026-10-12 | No API fallback budget for now; revisit if subscription policies or limits get in the way | Guglielmo |
 | D42 | 2026-10-12 | GPT-generated task families approved (cross-vendor generation, so generator × solver effects can be measured) | Guglielmo |
+| D43 | 2026-10-12 | P-A test article (metallic, unswept ~3 m wing-box segment) accepted as proposed | Guglielmo |
+| D44 | 2026-10-12 | P-A fault catalogue F1–F7 accepted pending expert review; correlation criterion (±10% / ±50 µε; ±5% / 0.2 mm) and test-decision rule (GO / GO-WITH-HOLD / NO-GO; no skin buckling below limit) assumed until experts are asked | Guglielmo |
+| D45 | 2026-10-12 | Supplied-tool fault (mid-surface strain extraction) removed as too much of a gotcha | Guglielmo |
+| D46 | 2026-10-12 | P-A investigation costs and budgets accepted | Guglielmo |
+| D47 | 2026-10-12 | P-A technical spike approved (run the same day; `private/families/pa-wingbox-correlation/spike/REPORT.md`) | Guglielmo |
+| D48 | 2026-10-12 | 2-page scenario brief (PDF, with figures) for expert consultations; expert contacts research started | Guglielmo |
 
 ## Status
 
 - **Phase 0 — landscape research:** done (2026-10-06).
 - **Phase 1 — design:** framework v0.3 (`docs/benchmark_design.md`); its §11 questions were answered on 2026-10-07 (D26–D35).
-- **Now (2026-10-12):** pathfinder P-A chosen (D36). Q15 settled for the pilot: H1 with four systems (D37–D41). Draft P-A specification v0.1 is in `private/families/pa-wingbox-correlation/spec.md`, waiting for Guglielmo's steering (its §16) and approval of a small technical spike to check the physics numerically.
-- **Next:** contacts research for P-A expert review; then a very simple consultation plan. Implementation beyond the approved spike only after the design and validation approach are agreed (D2).
+- **Now (2026-10-12):**
+  - P-A spec v0.2 steered (D43–D46).
+  - Technical spike done (D47): the family is coherent; the report proposes five spec changes (fault magnitudes vs criterion, discriminating withheld conditions and margins, key-gauge rules, Z-stringers for buckling, deflections).
+  - 2-page scenario brief PDF for experts at `private/families/pa-wingbox-correlation/brief/`.
+  - Contacts research v0.1 at `private/contacts/pa_wbc_reviewers.md`.
+  - Pending from Guglielmo: review of the spike changes; decisions on the design-values basis and episode caps (explained in chat).
+- **Next:** fold the agreed spike changes into spec v0.3; a very simple consultation plan (D18); then expert consultations with the brief. Implementation beyond the spike only after the design and validation approach are agreed (D2).
 - **Environment facts:**
   - Host: Apple M2 Pro (10 cores, 16 GB RAM).
   - Docker 29 installed (daemon not running on 2026-10-07).
