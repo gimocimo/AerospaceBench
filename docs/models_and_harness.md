@@ -1,6 +1,15 @@
 # Models and harness (Q15): options
 
-*Discussion draft by Claude, 2026-10-07. Nothing here is decided (D17). Facts were checked on 2026-10-07 against the sources linked; vendor plans and limits change often, so re-check before any run.*
+*Discussion draft by Claude, 2026-10-07. Facts were checked on 2026-10-07 against the sources linked; vendor plans and limits change often, so re-check before any run.*
+
+> **Decided for the pilot (2026-10-12, D37–D41):**
+> - **Option H1:** each vendor's own agent on Guglielmo's subscriptions (Claude Max 5x, ChatGPT Pro 5x).
+> - **Four systems:** Claude Code + Claude Fable 5.1, Claude Code + Claude Opus 5.5, Codex CLI + GPT-6 Astra, Codex CLI + GPT-5.6 Sol.
+> - **Framing:** model-plus-native-agent systems; token budgets measured, not enforced.
+> - **Where:** episodes run in Docker on Guglielmo's Mac.
+> - **No API fallback budget yet.**
+>
+> Both Claude systems share one Max 5x plan's limits, and both OpenAI systems share one ChatGPT plan's limits, so throughput must be planned around the weekly windows (§5).
 
 ## 1. What the evaluation design needs from the harness
 

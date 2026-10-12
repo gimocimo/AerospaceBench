@@ -66,14 +66,25 @@ Read this first in every session. It holds the brief, the working rules, the dec
 | D33 | 2026-10-07 | ChatGPT may red-team Claude-generated task packages. GPT-generated families not yet approved; ask first | Guglielmo |
 | D34 | 2026-10-07 | Q15 (models and harness) opened for discussion; options in `docs/models_and_harness.md` | Guglielmo |
 | D35 | 2026-10-07 | Claude to provide 2–3 candidate pathfinder briefs (delivered in `private/candidates/pathfinder_briefs.md`) | Guglielmo |
+| D36 | 2026-10-12 | Pathfinder family: P-A (wing-box static-test correlation and substantiation) | Guglielmo |
+| D37 | 2026-10-12 | Subscriptions: Claude Max 5x and ChatGPT Pro 5x | Guglielmo |
+| D38 | 2026-10-12 | Systems under test (four): Claude Code + Claude Fable 5.1; Claude Code + Claude Opus 5.5; Codex CLI + GPT-6 Astra; Codex CLI + GPT-5.6 Sol | Guglielmo |
+| D39 | 2026-10-12 | Results framed as model-plus-native-agent systems; token budgets measured, not enforced (option H1 in `docs/models_and_harness.md`) | Guglielmo |
+| D40 | 2026-10-12 | Episodes run on this Mac in Docker containers | Guglielmo |
+| D41 | 2026-10-12 | No API fallback budget for now; revisit if subscription policies or limits get in the way | Guglielmo |
+| D42 | 2026-10-12 | GPT-generated task families approved (cross-vendor generation, so generator × solver effects can be measured) | Guglielmo |
 
 ## Status
 
 - **Phase 0 — landscape research:** done (2026-10-06).
 - **Phase 1 — design:** framework v0.3 (`docs/benchmark_design.md`); its §11 questions were answered on 2026-10-07 (D26–D35).
-- **Now:** Guglielmo is choosing the pathfinder from three private candidate briefs: P-A (structures, diagnostic; Claude recommends it), P-B (aero-structural design), P-C (propulsion operations). He is also answering the Q15 questions in `docs/models_and_harness.md`, where Claude recommends running each vendor's own agent on subscriptions, with measurement inside the environment.
-- **Next:** detailed specification of the chosen pathfinder (private repo); contacts research for its expert review; then a very simple consultation plan. Implementation only after the design and validation approach are agreed (D2).
-- **Environment facts:** host is an Apple M2 Pro (10 cores, 16 GB RAM). Docker 29 is installed (daemon not running on 2026-10-07). Claude Code CLI 2.1.143 is installed; Codex CLI is not. Solver images must support ARM.
+- **Now (2026-10-12):** pathfinder P-A chosen (D36). Q15 settled for the pilot: H1 with four systems (D37–D41). Draft P-A specification v0.1 is in `private/families/pa-wingbox-correlation/spec.md`, waiting for Guglielmo's steering (its §16) and approval of a small technical spike to check the physics numerically.
+- **Next:** contacts research for P-A expert review; then a very simple consultation plan. Implementation beyond the approved spike only after the design and validation approach are agreed (D2).
+- **Environment facts:**
+  - Host: Apple M2 Pro (10 cores, 16 GB RAM).
+  - Docker 29 installed (daemon not running on 2026-10-07).
+  - Claude Code CLI 2.1.143 installed; Codex CLI not yet.
+  - Solver images must support ARM: CalculiX 2.23 and Gmsh 4.15 are on conda-forge for linux-aarch64. PyPI Gmsh wheels are macOS-ARM only, so containers use conda/micromamba.
 - **Repo:** `main` pushed to GitHub on 2026-10-07, after transient GitHub "Internal Server Error" responses on the first attempts (they resolved within minutes).
 
 ## Key findings from Phase 0 (details in the report)
