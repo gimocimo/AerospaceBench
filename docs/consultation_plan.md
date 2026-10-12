@@ -1,6 +1,6 @@
 # Expert consultation plan (simple)
 
-*v0.1, 2026-10-13. A deliberately light process for short, directed expert input on specific task families (D9, D18). It follows D7 (contributors, not research subjects; written consent plus a short contributor note), D8 (personal capacity; nothing confidential or export-controlled), D11 (recording only with consent; local transcription), D12 (English) and D13 (unpaid, acknowledged). Candidate names and family-specific material live in the private repository, never here. This is not legal advice.*
+*v0.1, 2026-10-12. A deliberately light process for short, directed expert input on specific task families (D9, D18). It follows D7 (contributors, not research subjects; written consent plus a short contributor note), D8 (personal capacity; nothing confidential or export-controlled), D11 (recording only with consent; local transcription), D12 (English) and D13 (unpaid, acknowledged). Candidate names and family-specific material live in the private repository, never here. This is not legal advice.*
 
 ## 1. The process in five steps
 

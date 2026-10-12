@@ -111,7 +111,18 @@ An attractive objective value never compensates for a critical violation. A mino
 
 Each stage's work package is scored with the acceptance and quality rules above. In addition, **preservation** is scored: results unaffected by the change remain valid and unchanged, and all affected items are updated. This is checked via the evidence-map diff and the verifier.
 
-### 4.6 Statistics
+### 4.6 Fairness and abstention rules (adopted 2026-10-12 from the cross-vendor generator's proposals)
+
+These rules come from the first GPT-generated family proposals (provenance X, D42). Each family specification applies them.
+
+1. **Withheld conditions sample only the declared operating envelope** and never introduce new requirements.
+2. **Three legitimate outcomes:** demonstrated compliance, proven infeasibility within the permitted design space, or demonstrated insufficiency of evidence. A failed optimisation proves neither infeasibility nor underdetermination.
+3. **Class-balanced reporting:** completion is reported per feasibility class. Blanket abstention ("cannot determine" on solvable instances) counts as failure.
+4. **Investigable vs terminally underdetermined:** if an affordable action in the investigation menu would resolve the ambiguity, the instance is investigable. Answering "cannot determine" without taking that action is wrong.
+5. **Label robustness:** an instance is rejected if its feasibility label changes within unresolved numerical error (mesh, time step, interpolation, solver tolerance).
+6. **Staged changes reserve budget:** part of the investigation budget is held back for work after the amendment.
+
+### 4.7 Statistics
 
 - The family is the top-level unit; instances are clustered within families and variants.
 - Intervals come from bootstrapping over families and instances.

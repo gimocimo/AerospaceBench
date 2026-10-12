@@ -80,26 +80,33 @@ Read this first in every session. It holds the brief, the working rules, the dec
 | D46 | 2026-10-12 | P-A investigation costs and budgets accepted | Guglielmo |
 | D47 | 2026-10-12 | P-A technical spike approved (run the same day; `private/families/pa-wingbox-correlation/spike/REPORT.md`) | Guglielmo |
 | D48 | 2026-10-12 | 2-page scenario brief (PDF, with figures) for expert consultations; expert contacts research started | Guglielmo |
-| D49 | 2026-10-13 | All five spike changes approved and folded into P-A spec v0.3 (fault magnitudes vs criterion with "excellence" items; discriminating withheld cases and margin locations via a wrong-model check; key-gauge rules; Z-stringers and realistic imperfections; deeper box with nonlinear truth at 100%) | Guglielmo |
-| D50 | 2026-10-13 | A- vs B-basis design values are a judgement item, at clear-cut locations only, confirmed with experts | Guglielmo |
-| D51 | 2026-10-13 | Episode caps shorter, to make the benchmark harder: halved to 0.5 / 1 / 1.5 / 2 / 3 / 3 + 1 h | Guglielmo |
-| D52 | 2026-10-13 | Simple consultation plan drafted (`docs/consultation_plan.md`). Scenario brief rewritten as v0.2: max 5 pages, plain-language explanations of every term, assumption and decision, gradual introduction | Guglielmo |
-| D53 | 2026-10-13 | Option (a): draft the remaining pilot family briefs (done: P-D turboshaft pass-off diagnosis, P-E electric VTOL drone sizing, P-F wing-skin repair; P-B/P-C updated; a GPT generation prompt prepared) before building P-A | Guglielmo |
-| D54 | 2026-10-13 | Contact names and anything identifying contacted people stay out of the public repo (private repo only; public `.gitignore` safety net) | Guglielmo |
-| D55 | 2026-10-13 | First outreach emails drafted for three reviewers (kept in `private/contacts/outreach_drafts.md`) | Guglielmo |
+| D49 | 2026-10-12 | All five spike changes approved and folded into P-A spec v0.3 (fault magnitudes vs criterion with "excellence" items; discriminating withheld cases and margin locations via a wrong-model check; key-gauge rules; Z-stringers and realistic imperfections; deeper box with nonlinear truth at 100%) | Guglielmo |
+| D50 | 2026-10-12 | A- vs B-basis design values are a judgement item, at clear-cut locations only, confirmed with experts | Guglielmo |
+| D51 | 2026-10-12 | Episode caps shorter, to make the benchmark harder: halved to 0.5 / 1 / 1.5 / 2 / 3 / 3 + 1 h | Guglielmo |
+| D52 | 2026-10-12 | Simple consultation plan drafted (`docs/consultation_plan.md`). Scenario brief rewritten as v0.2: max 5 pages, plain-language explanations of every term, assumption and decision, gradual introduction | Guglielmo |
+| D53 | 2026-10-12 | Option (a): draft the remaining pilot family briefs (done: P-D turboshaft pass-off diagnosis, P-E electric VTOL drone sizing, P-F wing-skin repair; P-B/P-C updated; a GPT generation prompt prepared) before building P-A | Guglielmo |
+| D54 | 2026-10-12 | Contact names and anything identifying contacted people stay out of the public repo (private repo only; public `.gitignore` safety net) | Guglielmo |
+| D55 | 2026-10-12 | First outreach emails drafted for three reviewers (kept in `private/contacts/outreach_drafts.md`) | Guglielmo |
+| D56 | 2026-10-12 | First three outreach emails sent; tracked in `private/contacts/tracker.md` (follow-up ~2026-10-20 if no reply) | Guglielmo |
+| D57 | 2026-10-12 | First cross-vendor generation done: ChatGPT (GPT-6 Astra Max) proposed X-1 cold-gas spacecraft propulsion qualification, X-2 sailplane longitudinal control and CG, X-3 helicopter skid-gear impact. Claude's G3 assessment recommends X-1 for the G slot, X-3 as alternate, X-2 for expansion domain 1. Six fairness and abstention rules adopted into the framework (`benchmark_design.md` §4.6). Slate selection pending Guglielmo | Guglielmo |
 
 ## Status
 
 - **Phase 0 — landscape research:** done (2026-10-06).
 - **Phase 1 — design:** framework v0.3 (`docs/benchmark_design.md`); its §11 questions were answered on 2026-10-07 (D26–D35).
-- **Now (2026-10-13):**
+- **Now (2026-10-12):**
   - P-A spec v0.3 (D49–D51) in `private/families/pa-wingbox-correlation/spec.md`.
   - Scenario brief v0.2 (5 pages, plain language) at `private/families/pa-wingbox-correlation/brief/PA-WBC_scenario_brief_v0.2.pdf`.
   - Consultation plan in `docs/consultation_plan.md`.
   - Contacts list v0.1 in `private/contacts/pa_wbc_reviewers.md`.
   - Guglielmo can now start expert outreach.
-- **Pilot slate proposed (2026-10-13), in `private/candidates/pilot_family_briefs.md`:** P-A, P-B, P-D, P-E, P-F, plus one GPT-generated family (P-C as first alternate). The GPT prompt is in `private/candidates/gpt_generation_prompt.md`, waiting for Guglielmo to run it in ChatGPT with training turned off.
-- **Next:** Guglielmo sends the first outreach emails and runs the GPT prompt. Claude runs the coherence checks on GPT's families; Guglielmo selects the slate; expert input goes into spec v0.4. Building the P-A environment needs explicit go-ahead (D2).
+- **Pilot slate proposed (2026-10-12):** P-A, P-B, P-D, P-E, P-F (Claude) + X-1 cold-gas propulsion (GPT); alternates P-C and X-3. Documents: `private/candidates/pilot_family_briefs.md` and `private/candidates/gpt_families_assessment.md`.
+- **Outreach:** three emails sent 2026-10-12 (`private/contacts/tracker.md`).
+- **Next:**
+  - Guglielmo confirms the slate.
+  - Optionally, a ChatGPT red-team of the P-A spec (D33).
+  - Expert replies feed spec v0.4.
+  - Building the P-A environment needs explicit go-ahead (D2); P-A's build will calibrate the effort for the other families (GPT estimated 14–36 person-weeks per family, Claude ~100–170 h).
 - **Environment facts:**
   - Host: Apple M2 Pro (10 cores, 16 GB RAM).
   - Docker 29 installed (daemon not running on 2026-10-07).
