@@ -89,29 +89,28 @@ Read this first in every session. It holds the brief, the working rules, the dec
 | D55 | 2026-10-12 | First outreach emails drafted for three reviewers (kept in `private/contacts/outreach_drafts.md`) | Guglielmo |
 | D56 | 2026-10-12 | First three outreach emails sent; tracked in `private/contacts/tracker.md` (follow-up ~2026-10-20 if no reply) | Guglielmo |
 | D57 | 2026-10-12 | First cross-vendor generation done: ChatGPT (GPT-6 Astra Max) proposed X-1 cold-gas spacecraft propulsion qualification, X-2 sailplane longitudinal control and CG, X-3 helicopter skid-gear impact. Claude's G3 assessment recommends X-1 for the G slot, X-3 as alternate, X-2 for expansion domain 1. Six fairness and abstention rules adopted into the framework (`benchmark_design.md` §4.6). Slate selection pending Guglielmo | Guglielmo |
+| D58 | 2026-10-12 | Pilot slate confirmed: P-A, P-B, P-D, P-E, P-F, X-1 (cold-gas spacecraft propulsion, GPT-generated). Alternates P-C and X-3; X-2 kept for expansion domain 1 | Guglielmo |
+| D59 | 2026-10-12 | Go-ahead to build the P-A environment (first implementation beyond the spike). Build in milestones, starting with an end-to-end walking skeleton; track effort to calibrate the other families | Guglielmo |
 
 ## Status
 
 - **Phase 0 — landscape research:** done (2026-10-06).
 - **Phase 1 — design:** framework v0.3 (`docs/benchmark_design.md`); its §11 questions were answered on 2026-10-07 (D26–D35).
 - **Now (2026-10-12):**
-  - P-A spec v0.3 (D49–D51) in `private/families/pa-wingbox-correlation/spec.md`.
-  - Scenario brief v0.2 (5 pages, plain language) at `private/families/pa-wingbox-correlation/brief/PA-WBC_scenario_brief_v0.2.pdf`.
-  - Consultation plan in `docs/consultation_plan.md`.
-  - Contacts list v0.1 in `private/contacts/pa_wbc_reviewers.md`.
-  - Guglielmo can now start expert outreach.
-- **Pilot slate proposed (2026-10-12):** P-A, P-B, P-D, P-E, P-F (Claude) + X-1 cold-gas propulsion (GPT); alternates P-C and X-3. Documents: `private/candidates/pilot_family_briefs.md` and `private/candidates/gpt_families_assessment.md`.
-- **Outreach:** three emails sent 2026-10-12 (`private/contacts/tracker.md`).
+  - Pilot slate confirmed (D58). Family briefs: `private/candidates/pilot_family_briefs.md` and `private/candidates/gpt_families_assessment.md`.
+  - P-A spec v0.3 plus v0.4 build notes in `private/families/pa-wingbox-correlation/spec.md`; scenario brief v0.2 in `brief/`.
+  - **P-A environment build (D59), milestone M1 (walking skeleton) done** in `private/families/pa-wingbox-correlation/env/`. It covers instance generation for the first two rungs, the costed investigation service and CLI, the re-run stage and verifier gates A1–A4. The end-to-end self-test passes: the reference solution is accepted, and wrong and empty submissions are rejected. Plan and log: `env/BUILD_PLAN.md`, `env/BUILD_LOG.md`.
+  - Outreach: three emails sent 2026-10-12 (`private/contacts/tracker.md`); follow up ~2026-10-20 if no reply.
 - **Next:**
-  - Guglielmo confirms the slate.
+  - P-A M2 (full fault catalogue, discriminating margin locations, wrong-model check at generation), then M3–M7 per `env/BUILD_PLAN.md`.
   - Optionally, a ChatGPT red-team of the P-A spec (D33).
   - Expert replies feed spec v0.4.
-  - Building the P-A environment needs explicit go-ahead (D2); P-A's build will calibrate the effort for the other families (GPT estimated 14–36 person-weeks per family, Claude ~100–170 h).
 - **Environment facts:**
   - Host: Apple M2 Pro (10 cores, 16 GB RAM).
   - Docker 29 installed (daemon not running on 2026-10-07).
   - Claude Code CLI 2.1.143 installed; Codex CLI not yet.
   - Solver images must support ARM: CalculiX 2.23 and Gmsh 4.15 are on conda-forge for linux-aarch64. PyPI Gmsh wheels are macOS-ARM only, so containers use conda/micromamba.
+  - Docker Desktop is now running (8 GB, 10 CPUs). P-A image `abench-pa-env:0.1` (micromamba + CalculiX 2.23) is built locally.
 - **Repo:** `main` pushed to GitHub on 2026-10-07, after transient GitHub "Internal Server Error" responses on the first attempts (they resolved within minutes).
 
 ## Key findings from Phase 0 (details in the report)
