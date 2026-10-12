@@ -22,6 +22,7 @@ Read this first in every session. It holds the brief, the working rules, the dec
 - Keep the brief, decisions and outputs in this file and `docs/` as we go; update the decision log whenever Guglielmo decides something. Commit and push updates to GitHub, straight to `main` in both repos, with no branches or pull requests (D24, D27).
 - **Never push task content to the public repo:** instances, reference solutions, withheld conditions, verifier test data, candidate family briefs or fault catalogues. Anything public may enter future training data. Task content lives only in the private repo `gimocimo/AerospaceBench-tasks`, cloned at `private/` (git-ignored here) (D26). Every private file carries the canary GUID recorded in `private/README.md`. Never copy that GUID into the public repo.
 - Public docs may name families at a high level, but must not reveal hidden parameters, faults, references or withheld conditions.
+- **People Guglielmo contacts stay private (D54):** contact lists, outreach drafts, consultation notes, transcripts, write-ups, and anything else that identifies a contacted person live only in the private repo (`private/contacts/`). Never put their names or identifying details in the public repo, its commit messages or `CLAUDE.md`. The public `.gitignore` has a safety net for such files.
 - Never commit third-party PDFs (copyright); cite by link. `*.pdf` is git-ignored.
 - Claude-generated candidate tasks enter the benchmark only after Guglielmo's selection and the generation protocol in `docs/benchmark_design.md` §6: coherence and solvability checks, a verifier test suite, fresh-instance trials, and provenance recorded.
 - Sequence (D18): agree the pilot scope and task families first, then research contacts, then a very simple consultation plan.
@@ -83,6 +84,9 @@ Read this first in every session. It holds the brief, the working rules, the dec
 | D50 | 2026-10-13 | A- vs B-basis design values are a judgement item, at clear-cut locations only, confirmed with experts | Guglielmo |
 | D51 | 2026-10-13 | Episode caps shorter, to make the benchmark harder: halved to 0.5 / 1 / 1.5 / 2 / 3 / 3 + 1 h | Guglielmo |
 | D52 | 2026-10-13 | Simple consultation plan drafted (`docs/consultation_plan.md`). Scenario brief rewritten as v0.2: max 5 pages, plain-language explanations of every term, assumption and decision, gradual introduction | Guglielmo |
+| D53 | 2026-10-13 | Option (a): draft the remaining pilot family briefs (done: P-D turboshaft pass-off diagnosis, P-E electric VTOL drone sizing, P-F wing-skin repair; P-B/P-C updated; a GPT generation prompt prepared) before building P-A | Guglielmo |
+| D54 | 2026-10-13 | Contact names and anything identifying contacted people stay out of the public repo (private repo only; public `.gitignore` safety net) | Guglielmo |
+| D55 | 2026-10-13 | First outreach emails drafted for three reviewers (kept in `private/contacts/outreach_drafts.md`) | Guglielmo |
 
 ## Status
 
@@ -94,7 +98,8 @@ Read this first in every session. It holds the brief, the working rules, the dec
   - Consultation plan in `docs/consultation_plan.md`.
   - Contacts list v0.1 in `private/contacts/pa_wbc_reviewers.md`.
   - Guglielmo can now start expert outreach.
-- **Next:** expert consultations (first wave per the contacts list); fold their input into spec v0.4; then decide whether to start building the P-A environment (implementation needs explicit go-ahead, D2). The other 4–5 pilot families can be drafted in parallel (Claude and GPT generators, D42).
+- **Pilot slate proposed (2026-10-13), in `private/candidates/pilot_family_briefs.md`:** P-A, P-B, P-D, P-E, P-F, plus one GPT-generated family (P-C as first alternate). The GPT prompt is in `private/candidates/gpt_generation_prompt.md`, waiting for Guglielmo to run it in ChatGPT with training turned off.
+- **Next:** Guglielmo sends the first outreach emails and runs the GPT prompt. Claude runs the coherence checks on GPT's families; Guglielmo selects the slate; expert input goes into spec v0.4. Building the P-A environment needs explicit go-ahead (D2).
 - **Environment facts:**
   - Host: Apple M2 Pro (10 cores, 16 GB RAM).
   - Docker 29 installed (daemon not running on 2026-10-07).

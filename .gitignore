@@ -14,3 +14,11 @@ __pycache__/
 
 # Local-only material that must never be published (e.g. private task drafts)
 private/
+
+# Safety net: anything identifying people contacted for consultations stays out of the public repo
+# (the real files live in the private repo under private/contacts/)
+contacts/
+**/*contacts*
+**/*outreach*
+**/*consultation_notes*
+**/*transcript*
