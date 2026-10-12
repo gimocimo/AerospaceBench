@@ -79,18 +79,22 @@ Read this first in every session. It holds the brief, the working rules, the dec
 | D46 | 2026-10-12 | P-A investigation costs and budgets accepted | Guglielmo |
 | D47 | 2026-10-12 | P-A technical spike approved (run the same day; `private/families/pa-wingbox-correlation/spike/REPORT.md`) | Guglielmo |
 | D48 | 2026-10-12 | 2-page scenario brief (PDF, with figures) for expert consultations; expert contacts research started | Guglielmo |
+| D49 | 2026-10-13 | All five spike changes approved and folded into P-A spec v0.3 (fault magnitudes vs criterion with "excellence" items; discriminating withheld cases and margin locations via a wrong-model check; key-gauge rules; Z-stringers and realistic imperfections; deeper box with nonlinear truth at 100%) | Guglielmo |
+| D50 | 2026-10-13 | A- vs B-basis design values are a judgement item, at clear-cut locations only, confirmed with experts | Guglielmo |
+| D51 | 2026-10-13 | Episode caps shorter, to make the benchmark harder: halved to 0.5 / 1 / 1.5 / 2 / 3 / 3 + 1 h | Guglielmo |
+| D52 | 2026-10-13 | Simple consultation plan drafted (`docs/consultation_plan.md`). Scenario brief rewritten as v0.2: max 5 pages, plain-language explanations of every term, assumption and decision, gradual introduction | Guglielmo |
 
 ## Status
 
 - **Phase 0 — landscape research:** done (2026-10-06).
 - **Phase 1 — design:** framework v0.3 (`docs/benchmark_design.md`); its §11 questions were answered on 2026-10-07 (D26–D35).
-- **Now (2026-10-12):**
-  - P-A spec v0.2 steered (D43–D46).
-  - Technical spike done (D47): the family is coherent; the report proposes five spec changes (fault magnitudes vs criterion, discriminating withheld conditions and margins, key-gauge rules, Z-stringers for buckling, deflections).
-  - 2-page scenario brief PDF for experts at `private/families/pa-wingbox-correlation/brief/`.
-  - Contacts research v0.1 at `private/contacts/pa_wbc_reviewers.md`.
-  - Pending from Guglielmo: review of the spike changes; decisions on the design-values basis and episode caps (explained in chat).
-- **Next:** fold the agreed spike changes into spec v0.3; a very simple consultation plan (D18); then expert consultations with the brief. Implementation beyond the spike only after the design and validation approach are agreed (D2).
+- **Now (2026-10-13):**
+  - P-A spec v0.3 (D49–D51) in `private/families/pa-wingbox-correlation/spec.md`.
+  - Scenario brief v0.2 (5 pages, plain language) at `private/families/pa-wingbox-correlation/brief/PA-WBC_scenario_brief_v0.2.pdf`.
+  - Consultation plan in `docs/consultation_plan.md`.
+  - Contacts list v0.1 in `private/contacts/pa_wbc_reviewers.md`.
+  - Guglielmo can now start expert outreach.
+- **Next:** expert consultations (first wave per the contacts list); fold their input into spec v0.4; then decide whether to start building the P-A environment (implementation needs explicit go-ahead, D2). The other 4–5 pilot families can be drafted in parallel (Claude and GPT generators, D42).
 - **Environment facts:**
   - Host: Apple M2 Pro (10 cores, 16 GB RAM).
   - Docker 29 installed (daemon not running on 2026-10-07).
@@ -116,6 +120,7 @@ Read this first in every session. It holds the brief, the working rules, the dec
 - `docs/benchmark_design.md` — **current** design framework (v0.3): central question, unit of evaluation, difficulty ladder, acceptance-first evaluation, verifiers, co-creation protocol, RE-Bench comparison, pilot implications, risks, open questions.
 - `docs/related_work_notes.md` — notes on Connolly 2025, ALUE 2025 and RE-Bench.
 - `docs/models_and_harness.md` — Q15 options for running models (vendor agents on subscriptions vs a common harness via APIs), with checked facts and a recommendation.
+- `docs/consultation_plan.md` — simple expert consultation process: outreach templates, call outline, contributor note, write-up template.
 - `private/` — clone of the private repo `gimocimo/AerospaceBench-tasks` (git-ignored here): candidate briefs, and later family specifications, instances and references.
 - `docs/pilot_scope_options.md` — v0.2. Options C and F3 chosen; its short-task design and family menu are superseded but kept as a parts bin.
 - `docs/pilot_proposal.md` — v0.1; partly superseded.
