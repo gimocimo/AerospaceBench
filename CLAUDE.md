@@ -91,6 +91,8 @@ Read this first in every session. It holds the brief, the working rules, the dec
 | D57 | 2026-10-12 | First cross-vendor generation done: ChatGPT (GPT-6 Astra Max) proposed X-1 cold-gas spacecraft propulsion qualification, X-2 sailplane longitudinal control and CG, X-3 helicopter skid-gear impact. Claude's G3 assessment recommends X-1 for the G slot, X-3 as alternate, X-2 for expansion domain 1. Six fairness and abstention rules adopted into the framework (`benchmark_design.md` §4.6). Slate selection pending Guglielmo | Guglielmo |
 | D58 | 2026-10-12 | Pilot slate confirmed: P-A, P-B, P-D, P-E, P-F, X-1 (cold-gas spacecraft propulsion, GPT-generated). Alternates P-C and X-3; X-2 kept for expansion domain 1 | Guglielmo |
 | D59 | 2026-10-12 | Go-ahead to build the P-A environment (first implementation beyond the spike). Build in milestones, starting with an end-to-end walking skeleton; track effort to calibrate the other families | Guglielmo |
+| D60 | 2026-10-13 | P-A build changes approved: lower skin 3.2 mm nominal (range 2.8–3.5 mm) and a Python structured mesher instead of Gmsh for the supplied model (spec v0.4 build notes) | Guglielmo |
+| D61 | 2026-10-13 | Go-ahead for P-A milestone M2 (fault catalogue, discriminating margin locations, wrong-model check at generation) | Guglielmo |
 
 ## Status
 
@@ -99,10 +101,10 @@ Read this first in every session. It holds the brief, the working rules, the dec
 - **Now (2026-10-12):**
   - Pilot slate confirmed (D58). Family briefs: `private/candidates/pilot_family_briefs.md` and `private/candidates/gpt_families_assessment.md`.
   - P-A spec v0.3 plus v0.4 build notes in `private/families/pa-wingbox-correlation/spec.md`; scenario brief v0.2 in `brief/`.
-  - **P-A environment build (D59), milestone M1 (walking skeleton) done** in `private/families/pa-wingbox-correlation/env/`. It covers instance generation for the first two rungs, the costed investigation service and CLI, the re-run stage and verifier gates A1–A4. The end-to-end self-test passes: the reference solution is accepted, and wrong and empty submissions are rejected. Plan and log: `env/BUILD_PLAN.md`, `env/BUILD_LOG.md`.
+  - **P-A environment build (D59–D61): milestones M1 (walking skeleton, 2026-10-12) and M2 (fault catalogue and wrong-model check, 2026-10-14) done** in `private/families/pa-wingbox-correlation/env/`. The generator builds instances for rungs R0–R3 and admits one only if the reference solution passes and every wrong model in a fixed library is rejected. The self-test passes on seven instances. Plan, findings and open items: `env/BUILD_PLAN.md`, `env/BUILD_LOG.md`. One design observation awaits Guglielmo: for local faults, the diagnosis and margin gates do most of the discriminating (BUILD_LOG, M2).
   - Outreach: three emails sent 2026-10-12 (`private/contacts/tracker.md`); follow up ~2026-10-20 if no reply.
 - **Next:**
-  - P-A M2 (full fault catalogue, discriminating margin locations, wrong-model check at generation), then M3–M7 per `env/BUILD_PLAN.md`.
+  - P-A M3 (nonlinear truth, buckling rung R4, decision gate), then M4–M7 per `env/BUILD_PLAN.md`.
   - Optionally, a ChatGPT red-team of the P-A spec (D33).
   - Expert replies feed spec v0.4.
 - **Environment facts:**
