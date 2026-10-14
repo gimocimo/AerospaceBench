@@ -93,6 +93,8 @@ Read this first in every session. It holds the brief, the working rules, the dec
 | D59 | 2026-10-12 | Go-ahead to build the P-A environment (first implementation beyond the spike). Build in milestones, starting with an end-to-end walking skeleton; track effort to calibrate the other families | Guglielmo |
 | D60 | 2026-10-13 | P-A build changes approved: lower skin 3.2 mm nominal (range 2.8–3.5 mm) and a Python structured mesher instead of Gmsh for the supplied model (spec v0.4 build notes) | Guglielmo |
 | D61 | 2026-10-13 | Go-ahead for P-A milestone M2 (fault catalogue, discriminating margin locations, wrong-model check at generation) | Guglielmo |
+| D62 | 2026-10-14 | Keep the 90% key-gauge rule for correlation and withheld predictions for now; for local faults the diagnosis and margin gates carry the discrimination. Revisit with the expert reviewers | Guglielmo |
+| D63 | 2026-10-14 | Go-ahead for P-A milestone M3 (nonlinear truth, buckling rung R4, decision gate) | Guglielmo |
 
 ## Status
 
@@ -104,7 +106,7 @@ Read this first in every session. It holds the brief, the working rules, the dec
   - **P-A environment build (D59–D61): milestones M1 (walking skeleton, 2026-10-12) and M2 (fault catalogue and wrong-model check, 2026-10-14) done** in `private/families/pa-wingbox-correlation/env/`. The generator builds instances for rungs R0–R3 and admits one only if the reference solution passes and every wrong model in a fixed library is rejected. The self-test passes on seven instances. Plan, findings and open items: `env/BUILD_PLAN.md`, `env/BUILD_LOG.md`. One design observation awaits Guglielmo: for local faults, the diagnosis and margin gates do most of the discriminating (BUILD_LOG, M2).
   - Outreach: three emails sent 2026-10-12 (`private/contacts/tracker.md`); follow up ~2026-10-20 if no reply.
 - **Next:**
-  - P-A M3 (nonlinear truth, buckling rung R4, decision gate), then M4–M7 per `env/BUILD_PLAN.md`.
+  - P-A M3 in progress (nonlinear truth, buckling rung R4, decision gate). It found that the solver's buckling factors were misleading and that the M1/M2 test article buckled below limit; a revised test article awaits Guglielmo's approval (spec v0.4 note 10). Then M4–M7 per `env/BUILD_PLAN.md`.
   - Optionally, a ChatGPT red-team of the P-A spec (D33).
   - Expert replies feed spec v0.4.
 - **Environment facts:**
