@@ -102,13 +102,13 @@ Read this first in every session. It holds the brief, the working rules, the dec
 
 - **Phase 0 — landscape research:** done (2026-10-06).
 - **Phase 1 — design:** framework v0.3 (`docs/benchmark_design.md`); its §11 questions were answered on 2026-10-07 (D26–D35).
-- **Now (2026-10-12):**
+- **Now (2026-10-16):**
   - Pilot slate confirmed (D58). Family briefs: `private/candidates/pilot_family_briefs.md` and `private/candidates/gpt_families_assessment.md`.
   - P-A spec v0.3 plus v0.4 build notes in `private/families/pa-wingbox-correlation/spec.md`; scenario brief v0.2 in `brief/`.
-  - **P-A environment build (D59–D61): milestones M1 (walking skeleton, 2026-10-12) and M2 (fault catalogue and wrong-model check, 2026-10-14) done** in `private/families/pa-wingbox-correlation/env/`. The generator builds instances for rungs R0–R3 and admits one only if the reference solution passes and every wrong model in a fixed library is rejected. The self-test passes on seven instances. Plan, findings and open items: `env/BUILD_PLAN.md`, `env/BUILD_LOG.md`. One design observation awaits Guglielmo: for local faults, the diagnosis and margin gates do most of the discriminating (BUILD_LOG, M2).
+  - **P-A environment build (D59–D65): milestones M1 (walking skeleton), M2 (fault catalogue and wrong-model check) and M3 (nonlinear truth, buckling rung R4, decision gate; done 2026-10-16)** in `private/families/pa-wingbox-correlation/env/`. The generator builds instances for rungs R0–R4 and admits one only if the reference solution passes and every wrong model in a fixed library is rejected. The self-test passes on eight instances. M3 also revised the test article (D64) and moved the truth to converged 8-node shells. Plan, findings and open items: `env/BUILD_PLAN.md`, `env/BUILD_LOG.md`.
   - Outreach: three emails sent 2026-10-12 (`private/contacts/tracker.md`); follow up ~2026-10-20 if no reply.
 - **Next:**
-  - P-A M3 (nonlinear truth, buckling rung R4, decision gate) nearly done: revised test article approved (D64); truth on converged 8-node shells; R0–R3 pass on the final code; the final simplified R4 self-test is running (D65). Then M4–M7 per `env/BUILD_PLAN.md`.
+  - P-A M4 (oracle investigator; underdetermined and no-go instances, including the "buckling already reached in step 1" class), then M5–M7 per `env/BUILD_PLAN.md`.
   - Optionally, a ChatGPT red-team of the P-A spec (D33).
   - Expert replies feed spec v0.4.
 - **Environment facts:**
